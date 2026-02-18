@@ -111,27 +111,36 @@ mid_rate = (low_rate + high_rate) // 2
 steps = 0
 
 while True:
-    # loop rins until we find required savings rate
-    mid_rate = (low_rate + high_rate) // 2
-    rate = mid_rate / 10000
-    savings = 0
-    monthly_salary = original_monthly_salary
-    for months in range(1, 37):
-        savings += savings * monthly_return
-        savings += monthly_salary * rate
-        if months % 6 == 0:
-            monthly_salary += monthly_salary * semi_annual_rise
-    steps += 1
+    # loop runs until we find required savings rate
+    
+    mid_rate = (low_rate + high_rate) // 2  
+    # Find midpoint of current rate range
+    
+    rate = mid_rate / 10000             # convert midpoint into decimal savings rate
 
+    savings = 0
+    
+    monthly_salary = original_monthly_salary        
+    
+    for months in range(1, 37):               
+        # loop runs until 36 months completed. 
+        savings += savings * monthly_return              # add monthly investment return
+        savings += monthly_salary * rate                 # adds monthly savings
+        if months % 6 == 0:
+            # checks 6 months completed or not
+            monthly_salary += monthly_salary * semi_annual_rise   
+    steps += 1           # increases one step for each iteration.
     if abs(savings - Down_payment) <= 100:
         print(f'Best savings rate: {rate:.4f}')
         print(f'Steps in bisection search: {steps}')
         break
     elif high_rate - low_rate <= 1:
+        
         print("It is not possible to find a suitable savings rate.")
         break
 
     elif savings < Down_payment:
-        low_rate = mid_rate
+        low_rate = mid_rate                # savings too low -> increase rate
+        
     else:
-        high_rate = mid_rate
+        high_rate = mid_rate               # savings too high → decrease rate
