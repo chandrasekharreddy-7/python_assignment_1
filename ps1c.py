@@ -11,7 +11,7 @@ while True:
     # asks unti the user enters correct data.
     try:
         
-        annual_salary = int(input("Enter starting salary: "))
+        annual_salary = float(input("Enter starting salary: "))
         # asks user to enter annual salary
         
         if annual_salary <= 0:
@@ -95,7 +95,7 @@ original_monthly_salary = monthly_salary
 # loop for 36 months with 100% savings
 for months in range(1, 37):
     savings += savings * monthly_return
-    savings += monthly_salary * 1
+    savings += monthly_salary
     if months % 6 == 0:
         monthly_salary += monthly_salary * semi_annual_rise
 if savings < Down_payment:

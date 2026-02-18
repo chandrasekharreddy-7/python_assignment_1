@@ -33,7 +33,7 @@ while True:
             monthly_salary = annual_salary / 12
             break
         else:
-            print("salary must be grater than 0.")
+            print("salary must be greater than 0.")
 
     except ValueError:
 
@@ -51,7 +51,7 @@ while True:
         else:
             print("please enter in decimal value (> 0 and < 1)")
     except ValueError:
-        print("please enter correct portion saved annualy in percantage (0-1) :")
+        print("please enter correct portion saved annually in percantage (0-1) :")
             # checks user entered correct portion saved or not.
 
 while True:

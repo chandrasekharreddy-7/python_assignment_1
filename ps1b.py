@@ -11,7 +11,7 @@ while True:
 
     try:
 
-        Cost_of_house = int(input("enter the total cost of dream home :"))
+        Cost_of_house = float(input("enter the total cost of dream home :"))
         # user enters his dream house cost.
         if Cost_of_house > 0:
             # checks user entered cost of house.
@@ -21,7 +21,6 @@ while True:
             break
         else:
             print("Cost of house must be greater then 0.")
-            continue
 
     except ValueError:
 
@@ -68,9 +67,9 @@ while True:
 
     try:
 
-        Annual_return = int(input("Enter annual return on investment :"))
-        if Annual_return >= 0 and Annual_return <= 100:
-            # checks annual return is between 1 and 100.
+        Annual_return = float(input("Enter annual return on investment :"))
+        if 0 <= Annual_return <= 100:
+            # checks annual return is between 0 and 100.
             monthly_return = (Annual_return/100) / 12
             break
         else:
