@@ -1,3 +1,11 @@
+'''
+Name: B.chandra sekhar reddy
+PRN NO: 250200299
+
+Collaborators:
+    1) S.Siva Sarsha
+    2) J.V.A.Siva Rama Teja
+'''
 while True:
     # asks user until the user enters correct input.
 
@@ -18,7 +26,6 @@ while True:
     except ValueError:
 
         print("invalid input!.please input correct cost.")
-
         # checks user entered correct value or not
 while True:
     # asks user until the user enters correct input.
@@ -45,13 +52,13 @@ while True:
 
     try:
 
-        Portion_saved = float(input(
-            "Enter the percent of your annual salary to save, as a decimal (> 0 and < 1) : "))
+        Portion_saved = float(input("Enter the percent of your annual salary to save, as a decimal (> 0 and < 1) : "))
 
         if 0 < Portion_saved <= 1:
             break
         else:
             print("please enter in decimal value (> 0 and < 1)")
+            
     except ValueError:
         print("please enter correct portion saved annualy in percantage (0-1) :")
         # checks user entered correct portion saved or not.
